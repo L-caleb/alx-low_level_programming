@@ -14,4 +14,5 @@ void jack_bauer(void);
 
 	hours_max = 58;
 	hours_tens = '0';
+}
 
