@@ -1,38 +1,26 @@
-#include "main.h"
+#include <stdio.h>
+#include <stdlib.h>
 
 /**
- * _realloc -  reallocates a memory block using malloc and free
- * @ptr: pointer
- * @old_size: old size
- * @new_size: new size
- * Return: pointer
+ * main - Check the code
+ * @argc: number of arguments
+ * @argv: arguments
+ * Return: Nothing
  */
-void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
+int main(int argc, char **argv)
 {
-	char *p, *copy;
-	unsigned int i;
+	int num1, num2, result;
 
-	if (new_size == old_size)
-		return (ptr);
-	if (ptr != NULL && new_size == 0)
+	if (argc != 3)
 	{
-		free(ptr);
-		return (NULL);
+		printf("Error\n");
+		exit(98);
 	}
-	if (ptr == NULL)
+	else
 	{
-		p = malloc(new_size);
-		if (p == NULL)
-			return (NULL);
-		return (p);
-	}
-
-	p = malloc(new_size);
-	if (p == NULL)
-		return (NULL);
-	copy = ptr;
-	for (i = 0; i < old_size; i++)
-		p[i] = copy[i];
-	free(ptr);
-	return (p);
-}
+		num1 = atoi(argv[1]);
+		num2 = atoi(argv[2]);
+		result = num1 * num2;
+		printf("%d\n", result);
+		return (0);
+	}}
