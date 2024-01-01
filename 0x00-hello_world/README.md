@@ -1,1 +1,1 @@
-non empty readme
+Hello world project with C language
